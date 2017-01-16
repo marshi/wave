@@ -8,7 +8,7 @@ import javax.inject.Inject;
 
 public class MainActivity extends AppCompatActivity {
 
-//	@Inject
+	@Inject
 	FeedPresenter feedPresenter;
 
 	@Override
