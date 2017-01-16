@@ -1,4 +1,4 @@
-package android.marshi.wave;
+package android.marshi.wave.presenter;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;

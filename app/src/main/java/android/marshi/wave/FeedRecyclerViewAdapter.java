@@ -2,6 +2,7 @@ package android.marshi.wave;
 
 import android.content.Context;
 import android.marshi.wave.databinding.FeedCardBinding;
+import android.marshi.wave.domain.FeedCard;
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 

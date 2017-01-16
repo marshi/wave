@@ -1,6 +1,6 @@
 package android.marshi.wave.di.component;
 
-import android.marshi.wave.MainActivity;
+import android.marshi.wave.activity.MainActivity;
 import android.marshi.wave.di.module.AppModule;
 import android.marshi.wave.di.module.PresenterModule;
 

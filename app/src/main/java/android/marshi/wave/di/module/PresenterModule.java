@@ -1,6 +1,6 @@
 package android.marshi.wave.di.module;
 
-import android.marshi.wave.FeedPresenter;
+import android.marshi.wave.presenter.FeedPresenter;
 
 import javax.inject.Singleton;
 

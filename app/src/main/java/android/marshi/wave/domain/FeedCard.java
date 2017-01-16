@@ -1,4 +1,4 @@
-package android.marshi.wave;
+package android.marshi.wave.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
