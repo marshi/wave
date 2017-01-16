@@ -30,8 +30,7 @@ public class FeedRecyclerViewAdapter extends RecyclerView.Adapter<BindingHolder<
     @Override
     public void onBindViewHolder(BindingHolder<FeedCardBinding> holder, int position) {
         FeedCard feedCard = feedList.get(position);
-        holder.binding.setText(feedCard.getText());
-        holder.binding.setTitle(feedCard.getTitle());
+        holder.binding.setFeedCard(feedCard);
     }
 
     @Override

@@ -8,7 +8,7 @@ import lombok.Getter;
  */
 @AllArgsConstructor
 @Getter
-class FeedCard {
+public class FeedCard {
 
     String title;
 

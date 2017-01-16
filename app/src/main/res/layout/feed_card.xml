@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
     <data>
-        <variable name="title" type="String" />
-        <variable name="text" type="String" />
+        <variable name="feedCard" type="android.marshi.wave.FeedCard" />
     </data>
 
     <RelativeLayout
