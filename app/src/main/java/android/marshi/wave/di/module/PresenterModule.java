@@ -13,10 +13,5 @@ import dagger.Provides;
 @Module
 public class PresenterModule {
 
-    @Provides
-    @Singleton
-    public FeedPresenter provideFeedPresenter() {
-        return new FeedPresenter();
-    }
 
 }
