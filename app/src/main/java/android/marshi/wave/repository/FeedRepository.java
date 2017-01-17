@@ -17,7 +17,7 @@ public class FeedRepository {
 
     public Observable<String> feed() {
         return
-          Observable.just("hi")
+          Observable.just("hi", "hi2", "hi3", "hi4", "hi5")
             .subscribeOn(Schedulers.io());
     }
 

@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		((App)getApplication()).getApplicationComponent().inject(this);
 		binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-		binding.button.setOnClickListener((view) -> feedPresenter.feedText(binding.text));
+		FeedTimelineActivity.start(this);
 	}
 
 }
