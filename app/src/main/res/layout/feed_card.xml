@@ -19,7 +19,7 @@
                 android:layout_alignTop="@+id/imageView"
                 android:layout_marginStart="17dp"
                 android:layout_marginTop="8dp"
-                android:text="TextView" />
+                android:text="@{feedCard.title}" />
 
         <TextView
                 android:id="@+id/text"
@@ -28,7 +28,7 @@
                 android:layout_alignStart="@+id/title"
                 android:layout_below="@+id/title"
                 android:layout_marginTop="14dp"
-                android:text="TextView" />
+                android:text="@{feedCard.text}" />
 
         <ImageView
                 android:id="@+id/imageView"

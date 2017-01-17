@@ -1,13 +1,11 @@
 package android.marshi.wave.domain;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
 
 /**
  * Created by a13178 on 2017/01/10.
  */
 @AllArgsConstructor
-@Getter
 public class FeedCard {
 
     String title;
@@ -16,4 +14,15 @@ public class FeedCard {
 
     String imageUrl;
 
+    public String getTitle() {
+        return title;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
 }
