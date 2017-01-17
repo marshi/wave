@@ -2,17 +2,15 @@ package android.marshi.wave.activity;
 
 import android.databinding.DataBindingUtil;
 import android.marshi.wave.App;
+import android.marshi.wave.R;
 import android.marshi.wave.databinding.ActivityMainBinding;
 import android.marshi.wave.presenter.FeedPresenter;
-import android.marshi.wave.R;
-import android.marshi.wave.ui.ButtonInterface;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
+import android.support.v7.app.AppCompatActivity;
 
 import javax.inject.Inject;
 
-public class MainActivity extends AppCompatActivity implements ButtonInterface {
+public class MainActivity extends AppCompatActivity {
 
 	@Inject
 	FeedPresenter feedPresenter;
@@ -24,11 +22,7 @@ public class MainActivity extends AppCompatActivity implements ButtonInterface {
 		super.onCreate(savedInstanceState);
 		((App)getApplication()).getApplicationComponent().inject(this);
 		binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-		binding.button.setOnClickListener(v -> {onTap(v);});
+		binding.button.setOnClickListener((view) -> feedPresenter.feedText(binding.text));
 	}
 
-	@Override
-	public void onTap(View view) {
-		binding.text.setText(feedPresenter.feedText());
-	}
 }
