@@ -36,6 +36,12 @@ public class FeedRecyclerViewAdapter extends RecyclerView.Adapter<BindingHolder<
 
     @Override
     public int getItemCount() {
-        return 0;
+        return feedList.size();
     }
+
+    public void add(FeedCard f) {
+        this.feedList.add(f);
+        notifyItemInserted(feedList.size() - 1);
+    }
+
 }
