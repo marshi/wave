@@ -1,6 +1,8 @@
 package android.marshi.wave.presenter;
 
 import android.marshi.wave.usecase.FeedUseCase;
+import android.widget.TextView;
+import rx.android.schedulers.AndroidSchedulers;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -17,7 +19,10 @@ public class FeedPresenter {
     @Inject
     public FeedPresenter(){}
 
-    public String feedText() {
-        return feedUseCase.start(null);
+    public void feedText(TextView view) {
+        feedUseCase.start(null)
+          .observeOn(AndroidSchedulers.mainThread())
+          .subscribe(view::setText);
     }
+
 }
