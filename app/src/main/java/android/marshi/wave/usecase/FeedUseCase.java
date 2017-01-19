@@ -1,7 +1,7 @@
 package android.marshi.wave.usecase;
 
 import android.marshi.wave.domain.FeedCard;
-import android.marshi.wave.repository.FeedRepository;
+import android.marshi.wave.repository.feedly.FeedRepository;
 import rx.Observable;
 import rx.schedulers.Schedulers;
 
@@ -24,7 +24,7 @@ public class FeedUseCase extends UseCase<Void, Observable<FeedCard>> {
     public Observable<FeedCard> start(Void aVoid) {
         return feedRepository.feed()
           .observeOn(Schedulers.computation())
-          .map(s -> new FeedCard(s, s, s));
+          .map(s -> new FeedCard("a", "a", "a"));
     }
 
 }

@@ -22,8 +22,7 @@ public class FeedPresenter {
   public void feedText(FeedRecyclerViewAdapter adapter) {
     feedUseCase.start(null)
       .observeOn(AndroidSchedulers.mainThread())
-      .subscribe(adapter::add
-      );
+      .subscribe(adapter::add);
   }
 
 }

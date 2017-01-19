@@ -1,4 +1,4 @@
-package android.marshi.wave.repository;
+package android.marshi.wave.repository.feedly;
 
 import rx.Observable;
 import rx.schedulers.Schedulers;
@@ -13,12 +13,13 @@ import javax.inject.Singleton;
 public class FeedRepository {
 
     @Inject
+    FeedlyClient feedlyClient;
+
+    @Inject
     public FeedRepository () {}
 
-    public Observable<String> feed() {
-        return
-          Observable.just("hi", "hi2", "hi3", "hi4", "hi5")
-            .subscribeOn(Schedulers.io());
+    public Observable<FeedDto> feed() {
+        return feedlyClient.getFeed("").subscribeOn(Schedulers.newThread());
     }
 
 }
