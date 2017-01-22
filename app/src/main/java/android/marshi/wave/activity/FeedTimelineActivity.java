@@ -17,6 +17,8 @@ import javax.inject.Inject;
 
 public class FeedTimelineActivity extends AppCompatActivity {
 
+    private FeedRecyclerViewAdapter adapter;
+
     @Inject
     FeedPresenter feedPresenter;
 
@@ -34,9 +36,12 @@ public class FeedTimelineActivity extends AppCompatActivity {
         ((App)getApplication()).getApplicationComponent().inject(this);
         RecyclerView feedRecyclerView = binding.feedRecyclerView;
         feedRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        FeedRecyclerViewAdapter adapter = new FeedRecyclerViewAdapter(this);
-        feedPresenter.feedText(adapter);
+        adapter = new FeedRecyclerViewAdapter(this);
         feedRecyclerView.setAdapter(adapter);
+
+        binding.imagebutton.setOnClickListener(v -> {
+            feedPresenter.feedText(adapter);
+        });
     }
 
 }
