@@ -23,8 +23,10 @@ public class FeedUseCase extends UseCase<Void, Observable<FeedCard>> {
     @Override
     public Observable<FeedCard> start(Void aVoid) {
         return feedRepository.feed()
-          .observeOn(Schedulers.computation())
-          .map(s -> new FeedCard("a", "a", "a"));
+            .observeOn(Schedulers.computation())
+            .map(s -> {
+                return new FeedCard(s.getTitle(), s.getDescription(), s.getVisualUrl());
+            });
     }
 
 }

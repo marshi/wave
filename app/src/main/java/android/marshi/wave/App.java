@@ -6,6 +6,7 @@ import android.marshi.wave.di.component.DaggerAppComponent;
 import android.marshi.wave.di.module.AppModule;
 import android.marshi.wave.di.module.HttpClientModule;
 import android.marshi.wave.repository.feedly.FeedlyClient;
+import com.facebook.stetho.Stetho;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -28,6 +29,12 @@ public class App extends Application {
           .appModule(new AppModule(this))
           .httpClientModule(new HttpClientModule())
           .build();
+        Stetho.initialize(
+            Stetho.newInitializerBuilder(this)
+                .enableDumpapp(Stetho.defaultDumperPluginsProvider(this))
+                .enableWebKitInspector(Stetho.defaultInspectorModulesProvider(this))
+                .build()
+        );
     }
 
     private void initializeHttpClient() {

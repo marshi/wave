@@ -2,6 +2,7 @@ package android.marshi.wave.presenter;
 
 import android.marshi.wave.FeedRecyclerViewAdapter;
 import android.marshi.wave.usecase.FeedUseCase;
+import android.util.Log;
 import rx.android.schedulers.AndroidSchedulers;
 
 import javax.inject.Inject;
@@ -22,7 +23,7 @@ public class FeedPresenter {
   public void feedText(FeedRecyclerViewAdapter adapter) {
     feedUseCase.start(null)
       .observeOn(AndroidSchedulers.mainThread())
-      .subscribe(adapter::add);
+      .subscribe(adapter::add, t -> Log.e(t.getMessage(), "error"));
   }
 
 }

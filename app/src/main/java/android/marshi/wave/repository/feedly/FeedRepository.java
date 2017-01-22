@@ -19,7 +19,7 @@ public class FeedRepository {
     public FeedRepository () {}
 
     public Observable<FeedDto> feed() {
-        return feedlyClient.getFeed("").subscribeOn(Schedulers.newThread());
+        return feedlyClient.getFeed("feed/http://www.publickey1.jp/atom.xml").subscribeOn(Schedulers.newThread());
     }
 
 }
